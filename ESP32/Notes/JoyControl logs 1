@@ -1,0 +1,398 @@
+[06:08:20] joycontrol.server create_hid_server::58 WARNING - [Errno 98] Address already in use
+[06:08:20] joycontrol.server create_hid_server::60 WARNING - Fallback: Restarting bluetooth due to incompatibilities with the bluez "input" plugin. Disable the plugin to avoid issues. See https://github.com/mart1nro/joycontrol/issues/8.
+[06:08:20] joycontrol.server create_hid_server::65 INFO - Restarting bluetooth service...
+[06:08:20] joycontrol.utils run_system_command::75 DEBUG - ['systemctl restart bluetooth.service' exited with 0]
+[06:08:21] joycontrol.device set_name::69 INFO - setting device name to Joy-Con (L)...
+[06:08:21] joycontrol.device set_class::61 INFO - setting device class to 0x002508...
+[06:08:21] joycontrol.utils run_system_command::75 DEBUG - ['hciconfig hci0 class 0x002508' exited with 0]
+[06:08:21] joycontrol.server create_hid_server::84 INFO - Advertising the Bluetooth SDP record...
+[06:08:22] joycontrol.server create_hid_server::94 INFO - Waiting for Switch to connect... Please open the "Change Grip/Order" menu.
+[06:08:23] joycontrol.server create_hid_server::98 INFO - Accepted connection at psm 17 from ('XX:XX:69:XX:XX:XX', 17)
+[06:08:23] joycontrol.server create_hid_server::100 INFO - Accepted connection at psm 19 from ('XX:XX:69:XX:XX:XX', 19)
+[06:08:23] joycontrol.protocol connection_made::112 DEBUG - Connection established.
+[06:08:23] joycontrol.transport write::150 DEBUG - sending "b'\xa1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[06:08:24] joycontrol.transport write::150 DEBUG - sending "b'\xa1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[06:08:24] joycontrol.transport read::101 DEBUG - received "[162, 1, 13, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[06:08:24] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.REQUEST_DEVICE_INFO
+[06:08:24] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x00\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x82\x02\x04\x00\x01\x02\x00\x1a}\xdaq\x13\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+cmd >> [06:08:24] joycontrol.transport read::101 DEBUG - received "[162, 1, 14, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[06:08:24] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SET_SHIPMENT_STATE
+[06:08:24] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x01\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x80\x08\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[06:08:24] joycontrol.transport read::101 DEBUG - received "[162, 1, 15, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 96, 0, 0, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[06:08:24] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SPI_FLASH_READ
+[06:08:24] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x02\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x90\x10\x00`\x00\x00\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[06:08:24] joycontrol.transport read::101 DEBUG - received "[162, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 80, 96, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[06:08:24] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SPI_FLASH_READ
+[06:08:24] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x03\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x90\x10P`\x00\x00\r\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[06:08:25] joycontrol.transport read::101 DEBUG - received "[162, 1, 1, 0, 1, 64, 64, 0, 0, 0, 0, 3, 48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[06:08:25] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SET_INPUT_REPORT_MODE
+[06:08:25] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x04\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x80\x03\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[06:08:25] joycontrol.protocol set_reader::412 INFO - Setting input report mode to 0x30...
+[06:08:25] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x05\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:25] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x06\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:25] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x07\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:25] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x08\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:25] joycontrol.transport write::150 DEBUG - sending "b'\xa10\t\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:25] joycontrol.transport read::101 DEBUG - received "[162, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[06:08:25] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.TRIGGER_BUTTONS_ELAPSED_TIME
+[06:08:25] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\n\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x83\x04\x00\x00\x00\x00\x00\x00\x00\x00,\x01,\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[06:08:25] joycontrol.transport read::101 DEBUG - received "[162, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 16, 128, 96, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[06:08:25] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SPI_FLASH_READ
+[06:08:25] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x0b\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x90\x10\x80`\x00\x00\x18\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00'"
+[06:08:25] joycontrol.transport write::150 DEBUG - sending "b'\xa1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[06:08:25] joycontrol.transport read::101 DEBUG - received "[162, 1, 4, 0, 1, 64, 64, 0, 0, 0, 0, 16, 152, 96, 0, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[06:08:25] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SPI_FLASH_READ
+[06:08:25] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x0c\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x90\x10\x98`\x00\x00\x12\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[06:08:25] joycontrol.transport read::101 DEBUG - received "[162, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 16, 16, 128, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[06:08:26] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SPI_FLASH_READ
+[06:08:26] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\r\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x90\x10\x10\x80\x00\x00\x18\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00'"
+[06:08:26] joycontrol.transport read::101 DEBUG - received "[162, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 16, 61, 96, 0, 0, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[06:08:26] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SPI_FLASH_READ
+[06:08:26] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x0e\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x90\x10=`\x00\x00\x19\x00\x07p\x00\x08\x80\x00\x07p\x00\x08\x80\x00\x07p\x00\x07p\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x00\x00'"
+[06:08:26] joycontrol.transport read::101 DEBUG - received "[162, 1, 7, 0, 0, 0, 0, 0, 0, 0, 0, 16, 32, 96, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[06:08:26] joycontrol.transport write::150 DEBUG - sending "b'\xa1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[06:08:26] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SPI_FLASH_READ
+[06:08:26] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x0f\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x90\x10 `\x00\x00\x18\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00'"
+[06:08:26] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x10\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:26] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x11\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:26] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x12\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:26] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x13\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:26] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x14\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:26] joycontrol.transport read::101 DEBUG - received "[162, 1, 8, 0, 0, 0, 0, 0, 0, 0, 0, 64, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[06:08:26] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.ENABLE_6AXIS_SENSOR
+[06:08:26] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x15\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x80@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[06:08:27] joycontrol.transport read::101 DEBUG - received "[162, 16, 9, 0, 1, 64, 64, 0, 0, 0, 0]"
+[06:08:27] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x16\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:27] joycontrol.transport read::101 DEBUG - received "[162, 16, 10, 194, 24, 3, 114, 0, 0, 0, 0]"
+[06:08:27] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x17\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:27] joycontrol.transport read::101 DEBUG - received "[162, 1, 11, 0, 0, 0, 0, 0, 0, 0, 0, 72, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[06:08:27] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.ENABLE_VIBRATION
+[06:08:27] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x18\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x80H\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[06:08:27] joycontrol.transport write::150 DEBUG - sending "b'\xa1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[06:08:27] joycontrol.transport read::101 DEBUG - received "[162, 1, 12, 0, 1, 64, 64, 0, 0, 0, 0, 48, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[06:08:27] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SET_PLAYER_LIGHTS
+[06:08:27] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x19\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x800\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[06:08:27] joycontrol.transport read::101 DEBUG - received "[162, 16, 13, 2, 152, 96, 64, 0, 0, 0, 0]"
+[06:08:27] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x1a\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:27] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x1b\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:27] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x1c\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:27] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x1d\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:27] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x1e\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:27] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x1f\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:27] joycontrol.transport write::150 DEBUG - sending "b'\xa10 \x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:27] joycontrol.transport write::150 DEBUG - sending "b'\xa10!\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:27] joycontrol.transport write::150 DEBUG - sending "b'\xa10"\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:28] joycontrol.transport write::150 DEBUG - sending "b'\xa10#\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:28] joycontrol.transport write::150 DEBUG - sending "b'\xa10$\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:28] joycontrol.transport write::150 DEBUG - sending "b'\xa10%\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:28] joycontrol.transport write::150 DEBUG - sending "b'\xa10&\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:28] joycontrol.transport write::150 DEBUG - sending "b"\xa10'\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80""
+[06:08:28] joycontrol.transport write::150 DEBUG - sending "b'\xa10(\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:28] joycontrol.transport write::150 DEBUG - sending "b'\xa10)\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:28] joycontrol.transport write::150 DEBUG - sending "b'\xa10*\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:28] joycontrol.transport write::150 DEBUG - sending "b'\xa10+\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:28] joycontrol.transport write::150 DEBUG - sending "b'\xa10,\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:28] joycontrol.transport write::150 DEBUG - sending "b'\xa10-\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:28] joycontrol.transport write::150 DEBUG - sending "b'\xa10.\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:28] joycontrol.transport write::150 DEBUG - sending "b'\xa10/\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[06:08:28] joycontrol.transport write::150 DEBUG - sending "b'\xa100\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+^CTraceback (most recent call last):
+  File "joycontrol/run_controller_cli.py", line 278, in <module>
+    _main(args)
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 571, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1740, in _run_once
+    self._process_events(event_list)
+  File "/usr/lib/python3.7/asyncio/selector_events.py", line 554, in _process_events
+    self._add_callback(reader)
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1666, in _add_callback
+    assert not isinstance(handle, events.TimerHandle)
+KeyboardInterrupt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[08:59:14] joycontrol.protocol connection_made::112 DEBUG - Connection established.
+[08:59:14] joycontrol.transport write::150 DEBUG - sending "b'\xa1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[08:59:15] joycontrol.transport write::150 DEBUG - sending "b'\xa1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[08:59:15] joycontrol.transport read::101 DEBUG - received "[162, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[08:59:15] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.REQUEST_DEVICE_INFO
+[08:59:15] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x00\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x82\x02\x04\x00\x01\x02\x00\x1a}\xdaq\x13\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+cmd >> [08:59:15] joycontrol.transport read::101 DEBUG - received "[162, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[08:59:15] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SET_SHIPMENT_STATE
+[08:59:15] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x01\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x80\x08\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[08:59:15] joycontrol.transport read::101 DEBUG - received "[162, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 96, 0, 0, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[08:59:15] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SPI_FLASH_READ
+[08:59:15] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x02\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x90\x10\x00`\x00\x00\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[08:59:15] joycontrol.transport read::101 DEBUG - received "[162, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 16, 80, 96, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[08:59:15] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SPI_FLASH_READ
+[08:59:15] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x03\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x90\x10P`\x00\x00\r\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[08:59:15] joycontrol.transport read::101 DEBUG - received "[162, 1, 4, 0, 1, 64, 64, 0, 0, 0, 0, 3, 48, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[08:59:15] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SET_INPUT_REPORT_MODE
+[08:59:15] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x04\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x80\x03\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[08:59:15] joycontrol.protocol set_reader::412 INFO - Setting input report mode to 0x30...
+[08:59:15] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x05\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:15] joycontrol.transport read::101 DEBUG - received "[162, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[08:59:15] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.TRIGGER_BUTTONS_ELAPSED_TIME
+[08:59:15] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x06\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x83\x04\x00\x00\x00\x00\x00\x00\x00\x00,\x01,\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[08:59:15] joycontrol.transport read::101 DEBUG - received "[162, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 16, 128, 96, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[08:59:15] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SPI_FLASH_READ
+[08:59:15] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x07\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x90\x10\x80`\x00\x00\x18\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00'"
+[08:59:15] joycontrol.transport read::101 DEBUG - received "[162, 1, 7, 0, 0, 0, 0, 0, 0, 0, 0, 16, 152, 96, 0, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[08:59:16] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SPI_FLASH_READ
+[08:59:16] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x08\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x90\x10\x98`\x00\x00\x12\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[08:59:16] joycontrol.transport read::101 DEBUG - received "[162, 1, 8, 0, 0, 0, 0, 0, 0, 0, 0, 16, 16, 128, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[08:59:16] joycontrol.transport write::150 DEBUG - sending "b'\xa1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[08:59:16] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SPI_FLASH_READ
+[08:59:16] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\t\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x90\x10\x10\x80\x00\x00\x18\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00'"
+[08:59:16] joycontrol.transport read::101 DEBUG - received "[162, 1, 9, 0, 0, 0, 0, 0, 0, 0, 0, 16, 61, 96, 0, 0, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[08:59:16] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SPI_FLASH_READ
+[08:59:16] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\n\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x90\x10=`\x00\x00\x19\x00\x07p\x00\x08\x80\x00\x07p\x00\x08\x80\x00\x07p\x00\x07p\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x00\x00'"
+[08:59:16] joycontrol.transport read::101 DEBUG - received "[162, 1, 10, 0, 0, 0, 0, 0, 0, 0, 0, 16, 32, 96, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[08:59:17] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SPI_FLASH_READ
+[08:59:17] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x0b\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x90\x10 `\x00\x00\x18\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00'"
+[08:59:17] joycontrol.transport write::150 DEBUG - sending "b'\xa1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[08:59:17] joycontrol.transport read::101 DEBUG - received "[162, 1, 11, 0, 0, 0, 0, 0, 0, 0, 0, 64, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[08:59:17] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.ENABLE_6AXIS_SENSOR
+[08:59:17] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x0c\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x80@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[08:59:17] joycontrol.transport read::101 DEBUG - received "[162, 1, 12, 0, 0, 0, 0, 0, 0, 0, 0, 72, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[08:59:17] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.ENABLE_VIBRATION
+[08:59:17] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\r\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x80H\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[08:59:17] joycontrol.transport read::101 DEBUG - received "[162, 1, 13, 0, 1, 64, 64, 0, 0, 0, 0, 48, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+[08:59:18] root _reply_to_sub_command::295 INFO - received output report - Sub command SubCommand.SET_PLAYER_LIGHTS
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa1!\x0e\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x00\x800\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x0f\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x10\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x11\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport read::101 DEBUG - received "[162, 16, 14, 128, 24, 96, 178, 0, 0, 0, 0]"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x12\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x13\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x14\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x15\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x16\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x17\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x18\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x19\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport read::101 DEBUG - received "[162, 16, 15, 0, 1, 64, 64, 0, 0, 0, 0]"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x1a\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x1b\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x1c\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x1d\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport read::101 DEBUG - received "[162, 16, 0, 128, 4, 99, 128, 0, 0, 0, 0]"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x1e\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport read::101 DEBUG - received "[162, 16, 1, 0, 1, 64, 64, 0, 0, 0, 0]"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x1f\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10 \x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10!\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10"\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10#\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10$\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10%\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10&\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b"\xa10'\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80""
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10(\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10)\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport read::101 DEBUG - received "[162, 16, 2, 0, 1, 64, 64, 0, 0, 0, 0]"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10*\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10+\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10,\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10-\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10.\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10/\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa100\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa101\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa102\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa103\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa104\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa105\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport read::101 DEBUG - received "[162, 16, 3, 0, 1, 64, 64, 0, 0, 0, 0]"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa106\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa107\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa108\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa109\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10:\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10;\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10<\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10=\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10>\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10?\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10@\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10A\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport read::101 DEBUG - received "[162, 16, 4, 0, 1, 64, 64, 0, 0, 0, 0]"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10B\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10C\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10D\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10E\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10F\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10G\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10H\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10I\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10J\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10K\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10L\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10M\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport read::101 DEBUG - received "[162, 16, 5, 0, 1, 64, 64, 0, 0, 0, 0]"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10N\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10O\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10P\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10Q\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10R\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10S\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10T\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:18] joycontrol.transport write::150 DEBUG - sending "b'\xa10U\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10V\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10W\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10X\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10Y\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport read::101 DEBUG - received "[162, 16, 6, 0, 1, 64, 64, 0, 0, 0, 0]"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10Z\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10[\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10\\\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10]\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10^\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10_\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10`\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10a\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10b\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10c\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10d\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10e\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport read::101 DEBUG - received "[162, 16, 7, 0, 1, 64, 64, 0, 0, 0, 0]"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10f\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10g\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10h\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10i\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10j\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10k\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10l\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10m\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10n\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10o\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10p\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10q\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport read::101 DEBUG - received "[162, 16, 8, 0, 1, 64, 64, 0, 0, 0, 0]"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10r\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10s\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10t\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10u\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10v\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10w\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10x\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10y\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10z\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10{\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10|\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10}\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport read::101 DEBUG - received "[162, 16, 9, 0, 1, 64, 64, 0, 0, 0, 0]"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10~\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa10\x7f\x8e\x00\x00\x00\x00\x08\x80\x00\x00\x00\x80'"
+[08:59:19] joycontrol.transport write::150 DEBUG - sending "b'\xa1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'"
+^CTraceback (most recent call last):
+  File "run_controller_cli.py", line 278, in <module>
+    _main(args)
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 571, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
+    handle._run()
+  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/joycontrol/joycontrol/protocol.py", line 193, in input_report_mode_full
+    await self.write(input_report)
+  File "/home/pi/joycontrol/joycontrol/protocol.py", line 97, in write
+    await self.transport.write(input_report)
+  File "/home/pi/joycontrol/joycontrol/transport.py", line 150, in write
+    logger.debug(f'sending "{_bytes}"')
+  File "/usr/lib/python3.7/logging/__init__.py", line 1371, in debug
+    self._log(DEBUG, msg, args, **kwargs)
+  File "/usr/lib/python3.7/logging/__init__.py", line 1518, in _log
+    exc_info, func, extra, sinfo)
+  File "/usr/lib/python3.7/logging/__init__.py", line 1488, in makeRecord
+    sinfo)
+  File "/usr/lib/python3.7/logging/__init__.py", line 328, in __init__
+    self.module = os.path.splitext(self.filename)[0]
+  File "/usr/lib/python3.7/posixpath.py", line 129, in splitext
+    return genericpath._splitext(p, sep, None, extsep)
+  File "/usr/lib/python3.7/genericpath.py", line 129, in _splitext
+    dotIndex = p.rfind(extsep)
+KeyboardInterrupt
