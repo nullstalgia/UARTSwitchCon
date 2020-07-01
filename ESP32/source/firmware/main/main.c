@@ -37,7 +37,7 @@
 #define JOYCON_L 0x01
 #define JOYCON_R 0x02
 
-#define CONTROLLER_TYPE PRO_CON
+#define CONTROLLER_TYPE JOYCON_L
 
 // Buttons and sticks
 #define A_DPAD_CENTER 0x08
@@ -98,18 +98,20 @@ typedef enum {
   RESP_SYNC_1 = 0xCC,
   RESP_SYNC_OK = 0x33,
   RESP_CHOCO_SYNC_1 = 0xEE,
-  RESP_CHOCO_SYNC_OK = 0x44
+  RESP_CHOCO_SYNC_OK = CONTROLLER_TYPE
 } Response_t;
 
-#define UART_TXD_PIN (GPIO_NUM_19)
-#define UART_RXD_PIN (GPIO_NUM_26)
-#define UART_NUM (UART_NUM_1)
+#define UART_TXD_PIN \
+  (UART_PIN_NO_CHANGE)  // When UART2, TX GPIO_NUM_19, RX GPIO_NUM_26
+#define UART_RXD_PIN \
+  (UART_PIN_NO_CHANGE)  // When UART0, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE
+#define UART_NUM (UART_NUM_0)
 
 uart_config_t uart_config;
 
 QueueHandle_t uart_queue;
 
-#define BUF_SIZE (1024)
+#define BUF_SIZE (256)
 
 uint8_t* uart_data;
 
@@ -186,7 +188,34 @@ static void uart_task() {
           }
           // CRC check passed. Let's populate our data.
           if (current_crc == uart_data[8]) {
-            if (uart_state == SYNCED) {
+            // So... This is a big fork in the road between the original
+            // SwitchInputEmulator and mine here on the ESP32.
+
+            // Normally, it would just send the values as is, but now with the
+            // original handshake (Master: FF 33 CC), it will go into what I am
+            // naming "Chocolate" mode. Where inputs are simplified and
+            // converted for sideways joycons (if it is set as a Joy-Con, that
+            // is.)
+
+            // DPad, Left Stick, and Right Stick is all converted to the main
+            // stick for that controller. (Left stick for L Joy-Con and Pro Con,
+            // Right stick for R Joy-Con).
+            // As of writing, the order of importance is:
+            // DPad, L Stick, R Stick. If one of those is off center, the first
+            // one in that list is the one the stick is set off of.
+
+            // A B X Y is set to the proper side for the sideways joycon.
+            // Example: A is going to be Down on L JC, and X on R JC.
+
+            // Shoulder buttons are simplified in this way:
+            // Sending either L, ZL, or SL, will press:
+            // L, ZL on Pro Con
+            // SL on Joy-Cons.
+            // Similar behavior is on the right side as well.
+            if (uart_state == CHOCO_SYNCED) {
+              // Vanilla mode, ahoy!
+              // This sets it exactly as it is given, with very little thought given to the input given.
+
               // This is used to clear the 2 most significant bits in the first
               // packet (which are mapped to SR and SL)
               // Frankly, I'm unsure if this is *required*, but better safe than
@@ -282,7 +311,9 @@ static void uart_task() {
               // This is also commented out on the original SwitchInputEmulator,
               // so I'm just referencing it as such. :)
               // send_byte(RESP_UPDATE_ACK);
-            } else if (uart_state == CHOCO_SYNCED) {
+            } else if (uart_state == SYNCED) {
+              // Chocolate mode ahoy.
+              // This does the simplification for all types of controllers.
               if (CONTROLLER_TYPE == PRO_CON) {
                 // uart_data[0] &= ~(1 << 7);  // Clear SL
                 // uart_data[0] &= ~(1 << 6);  // Clear SR
@@ -298,10 +329,10 @@ static void uart_task() {
               bool stickclick_button =
                   ((uart_data[0] >> 3) & 1) || ((uart_data[0] >> 2) & 1);
 
-              bool left_shoulder = ((uart_data[0] >> 7) & 1) ||
+              bool left_shoulder = ((uart_data[0] >> 6) & 1) ||
                                    ((uart_data[1] >> 4) & 1) ||
                                    ((uart_data[1] >> 6) & 1);
-              bool right_shoulder = ((uart_data[0] >> 6) & 1) ||
+              bool right_shoulder = ((uart_data[0] >> 7) & 1) ||
                                     ((uart_data[1] >> 5) & 1) ||
                                     ((uart_data[1] >> 7) & 1);
 
@@ -398,8 +429,8 @@ static void uart_task() {
                             (right_button << 1) +   // X
                             (left_button << 2) +    // B
                             (down_button << 3) +    // A
-                            (left_shoulder << 4) +  // SR
-                            (right_shoulder << 5);  // SL
+                            (right_shoulder << 4) +  // SR
+                            (left_shoulder << 5);  // SL
 
                 but2_send += (home_button << 4) +       // Home
                              (start_button << 1) +      // +/Start
@@ -418,8 +449,8 @@ static void uart_task() {
                             (left_button << 1) +    // X
                             (up_button << 2) +      // B
                             (down_button << 3) +    // A
-                            (left_shoulder << 4) +  // SR
-                            (right_shoulder << 5);  // SL
+                            (right_shoulder << 4) +  // SR
+                            (left_shoulder << 5);  // SL
 
                 but2_send += (start_button << 0) +       // -/Select
                              (stickclick_button << 3) +  // L Stick Click
@@ -474,7 +505,7 @@ static void uart_task() {
       // MASTER: 0x44
       // SLAVE: 0xEE
       // MASTER: 0xEE
-      // SLAVE: 0x44, then 0x90 with each packet sent as an HID
+      // SLAVE: CONTROLLER_TYPE, then 0x90 with each packet sent as an HID
       if (uart_state == SYNC_START) {
         if (uart_data[0] == COMMAND_SYNC_1) {
           uart_state = SYNC_1;
@@ -494,6 +525,7 @@ static void uart_task() {
         }
       } else if (uart_state == CHOCO_SYNC_1) {
         if (uart_data[0] == COMMAND_CHOCO_SYNC_2) {
+          // ESP_LOGI("BBBBBBBBBBBB", "BBBBBBBBBB");
           uart_state = CHOCO_SYNCED;
           send_byte(RESP_CHOCO_SYNC_OK);
         } else {
@@ -558,17 +590,21 @@ void send_buttons() {
   timer += 1;
   if (timer == 255) timer = 0;
 
-  if (!paired || !(uart_state == SYNCED || uart_state == CHOCO_SYNCED)) {
+  if ((uart_state == SYNCED || uart_state == CHOCO_SYNCED) &&
+      (paired || connected)) {
+    // ESP_LOGI("AAAAAAAA", "AAAAAA");
+    esp_hid_device_send_report(ESP_HIDD_REPORT_TYPE_INTRDATA, 0xa1,
+                               sizeof(report30), report30);
+    send_byte_(RESP_USB_ACK);
+    vTaskDelay(15);
+  } else {
     esp_hid_device_send_report(ESP_HIDD_REPORT_TYPE_INTRDATA, 0xa1,
                                sizeof(dummy), dummy);
     vTaskDelay(100);
+  }
+
+  if (!paired || !(uart_state == SYNCED || uart_state == CHOCO_SYNCED)) {
   } else {
-    if (uart_state == SYNCED || uart_state == CHOCO_SYNCED) {
-      esp_hid_device_send_report(ESP_HIDD_REPORT_TYPE_INTRDATA, 0xa1,
-                                 sizeof(report30), report30);
-      send_byte_(RESP_USB_ACK);
-    }
-    vTaskDelay(15);
   }
 }
 
@@ -739,12 +775,11 @@ static uint8_t reply3333[] = {
 
 // Reply for SubCommand.SET_NFC_IR_MCU_STATE
 static uint8_t reply3401[] = {
-        0x21, 0x12, 0x8e, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-        0x08, 0x80, 0x00, 0x80, 0x22, 0x00, 0x00, 0x00, 0x00, 0x00,
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-        
+    0x21, 0x12, 0x8e, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x08, 0x80, 0x00, 0x80, 0x22, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 
 // sending bluetooth values every 15ms
 void send_task(void* pvParameters) {
