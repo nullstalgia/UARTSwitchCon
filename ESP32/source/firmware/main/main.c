@@ -214,7 +214,8 @@ static void uart_task() {
             // Similar behavior is on the right side as well.
             if (uart_state == CHOCO_SYNCED) {
               // Vanilla mode, ahoy!
-              // This sets it exactly as it is given, with very little thought given to the input given.
+              // This sets it exactly as it is given, with very little thought
+              // given to the input given.
 
               // This is used to clear the 2 most significant bits in the first
               // packet (which are mapped to SR and SL)
@@ -425,12 +426,12 @@ static void uart_task() {
                 cx_send = 255 - stickY;
                 cy_send = stickX;
 
-                but1_send = (up_button << 0) +      // Y
-                            (right_button << 1) +   // X
-                            (left_button << 2) +    // B
-                            (down_button << 3) +    // A
+                but1_send = (up_button << 0) +       // Y
+                            (right_button << 1) +    // X
+                            (left_button << 2) +     // B
+                            (down_button << 3) +     // A
                             (right_shoulder << 4) +  // SR
-                            (left_shoulder << 5);  // SL
+                            (left_shoulder << 5);    // SL
 
                 but2_send += (home_button << 4) +       // Home
                              (start_button << 1) +      // +/Start
@@ -445,12 +446,12 @@ static void uart_task() {
                 cx_send = 128;
                 cy_send = 128;
 
-                but3_send = (right_button << 0) +   // Y
-                            (left_button << 1) +    // X
-                            (up_button << 2) +      // B
-                            (down_button << 3) +    // A
+                but3_send = (right_button << 0) +    // Y
+                            (left_button << 1) +     // X
+                            (up_button << 2) +       // B
+                            (down_button << 3) +     // A
                             (right_shoulder << 4) +  // SR
-                            (left_shoulder << 5);  // SL
+                            (left_shoulder << 5);    // SL
 
                 but2_send += (start_button << 0) +       // -/Select
                              (stickclick_button << 3) +  // L Stick Click
@@ -1108,8 +1109,8 @@ void app_main() {
   gpio_config(&io_conf);
   // gap_callbacks = get_device_cb;
 
-  app_param.name = "BlueCubeMod";
-  app_param.description = "BlueCubeMod Example";
+  app_param.name = "UARTSwitchCon";
+  app_param.description = "UARTSwitchCon";
   app_param.provider = "ESP32";
   // app_param.subclass = 0x002508;
   app_param.subclass = 0x8;
