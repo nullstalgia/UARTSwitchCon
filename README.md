@@ -1,6 +1,7 @@
 # UARTSwitchCon
 ESP32 and Arduino (AVR) compatible, UART controlled Nintendo Switch controller emulators.
 
+![](https://i.imgur.com/HjPuPFi.png) ![](https://i.imgur.com/OnOKpHm.png)
 
 This is an amalgamation of the amazing works of [Nathan Reeves](https://github.com/NathanReeves/BlueCubeMod) and [wchill](https://github.com/wchill/SwitchInputEmulator).
 
