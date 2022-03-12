@@ -5,6 +5,8 @@ ESP32 and Arduino (AVR) compatible, UART controlled Nintendo Switch controller e
 
 This is an amalgamation of the amazing works of [Nathan Reeves](https://github.com/NathanReeves/BlueCubeMod) and [wchill](https://github.com/wchill/SwitchInputEmulator).
 
+Huge thanks to [mizuyoukan-ao](https://github.com/mizuyoukanao) for figuring out v12 Switch Firmware support!
+
 This gives users an easy to use UART interface to automate/control their Nintendo Switch with their computer/anything with a configurable UART port.
 
 The ESP32 can act as a Left or Right Joy-Con, or a Pro Controller. (Wireless only)
