@@ -1134,8 +1134,8 @@ void app_main() {
   // xTaskCreatePinnedToCore(get_buttons, "gbuttons", 2048, NULL, 1,
   //                         &ButtonsHandle, 1);
   if (CONTROLLER_TYPE != PRO_CON) {
-    report30[2] += (0x3 << 1);
-    dummy[2] += (0x3 << 1);
+    //report30[2] += (0x3 << 1);
+    //dummy[2] += (0x3 << 1);
   }
   uart_init();
   xTaskCreatePinnedToCore(uart_task, "uart_task", 2048, NULL, 1, &ButtonsHandle,
