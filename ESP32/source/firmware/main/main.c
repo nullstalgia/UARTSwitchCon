@@ -4,6 +4,8 @@
 //
 //  Created by Nathan Reeves 2019
 //
+//  Expanded by nullstalgia 2020-2022
+//
 // Main clock 80MHz
 
 #include <inttypes.h>

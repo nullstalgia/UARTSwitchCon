@@ -1,6 +1,10 @@
 /*
-Nintendo Switch Fightstick - Proof-of-Concept
+UARTSwitchCon, AVR/USB component
 
+Adapted by nullstalgia 2020
+
+Based on the Switch Fightstick proof-of-concepts
+    (C) progmem, kasaku, Nintendo Switch Reverse Engineering group
 Based on the LUFA library's Low-Level Joystick Demo
     (C) Dean Camera
 Based on the HORI's Pokken Tournament Pro Pad design
